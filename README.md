@@ -1,16 +1,16 @@
-# time_capsule
+# Time Capsule
 
-A new Flutter project.
+## Выполнили:
+-Пак Владислав
+-Миллер Виктория
+- Группа: 9-4-ПО-22  
 
-## Getting Started
+## Краткое описание приложения
+**Time Capsule** - это мобильное приложение на Flutter, предназначенное для создания и хранения личных цифровых капсул времени. Приложение позволяет пользователям сохранять заметки, фотографии и другие записи, которые можно открыть в будущем. Оно решает проблему забытой информации и упущенных моментов, предоставляя удобный способ фиксировать важные события и эмоции. Целевая аудитория - подростки и люди средневого возраста, которые хотят вести личный дневник, фиксировать памятные события или планировать свои достижения на будущее.  
 
-This project is a starting point for a Flutter application.
+## Макет интерфейса в Figma
+Ссылка на макет: [Открыть макет в Figma](https://www.figma.com/design/JeHWRr7qdHvrIgmPZPJSN0/TimeCapsule?node-id=0-1&m=dev&t=VrWzfck3bVJVBVsI-1)  
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+В макете представлены следующие экраны:  
+- Главный экран - отображает список всех капсул и кнопку создания новой капсулы.  
+- Экран редактирования/создания капсулы - позволяет добавить текст, изображение и сохранить запись.  
