@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'edit.dart';
+import 'create.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +43,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
 
-            /// КЛИКАБЕЛЬНАЯ КАРТОЧКА
             capsuleCard(
               context: context,
               icon: Icons.flight,
@@ -51,7 +51,6 @@ class HomeScreen extends StatelessWidget {
               openEdit: true,
             ),
 
-            /// ОБЫЧНЫЕ КАРТОЧКИ
             capsuleCard(
               context: context,
               icon: Icons.mail_outline,
@@ -72,7 +71,14 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               height: 56,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CreateScreen(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF4F5BD5),
                   shape: RoundedRectangleBorder(

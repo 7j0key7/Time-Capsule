@@ -33,7 +33,6 @@ class EditScreen extends StatelessWidget {
         child: Column(
           children: [
 
-            /// КАРТОЧКА
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -48,7 +47,6 @@ class EditScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  /// Заголовок
                   Row(
                     children: [
                       Container(
@@ -107,7 +105,6 @@ class EditScreen extends StatelessWidget {
 
                   const SizedBox(height: 12),
 
-                  /// КНОПКА ИЗМЕНИТЬ ФОТО (ПОКА БЕЗ ЛОГИКИ)
                   TextButton(
                     onPressed: () {},
                     child: const Text(
@@ -121,7 +118,6 @@ class EditScreen extends StatelessWidget {
 
                   const SizedBox(height: 8),
 
-                  /// ЗАГЛУШКА ПОД ФОТО
                   Container(
                     height: 180,
                     width: double.infinity,
@@ -143,7 +139,6 @@ class EditScreen extends StatelessWidget {
 
             const Spacer(),
 
-            /// КНОПКИ
             SizedBox(
               width: double.infinity,
               height: 56,
