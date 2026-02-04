@@ -3,6 +3,9 @@ import '../plugins/api.dart';
 import 'create_screen.dart';
 import 'edit_screen.dart';
 import '../widgets/daily_capsule_button.dart';
+import '../plugins/auth_service.dart';
+import 'login_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -83,25 +86,33 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: const Color(0xFF2B2F7A),
-        centerTitle: true,
-        title: const Text(
-          'TimeCapsule',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: loadCapsules,
-            icon: const Icon(Icons.refresh, color: Colors.white),
-          ),
-        ],
-      ),
+appBar: AppBar(
+  backgroundColor: const Color(0xFF2B2F7A),
+  centerTitle: true,
+  title: const Text(
+    'TimeCapsule',
+    style: TextStyle(
+      color: Colors.white,
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+  elevation: 0,
+  actions: [
+    IconButton(
+      onPressed: () async {
+        await AuthService.logout();
+        if (!context.mounted) return;
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => const LoginScreen()),
+        );
+      },
+      icon: const Icon(Icons.logout, color: Colors.white),
+    ),
+  ],
+),
+
       body: Stack(
         children: [
           Padding(
