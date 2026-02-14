@@ -1,4 +1,3 @@
-// create_screen.dart
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,6 @@ class _CreateScreenState extends State<CreateScreen> {
     textCtrl.addListener(_tick);
     imgCtrl.addListener(_tick);
 
-    // (не обязательно) можно сразу попросить разрешение, чтобы не мешать сохранению
     if (kIsWeb) {
       WebNotifications.requestPermission();
     }
@@ -65,7 +63,6 @@ class _CreateScreenState extends State<CreateScreen> {
     if (picked != null) setState(() => openDate = picked);
   }
 
-  // WEB: показать уведомление "сохранено" БЕЗ await (чтобы не зависало сохранение)
   void _notifySaved() {
     if (!kIsWeb) return;
 
@@ -79,7 +76,6 @@ class _CreateScreenState extends State<CreateScreen> {
     });
   }
 
-  // WEB: "отложенное" уведомление (работает пока вкладка открыта)
   void _scheduleWebReminder(Duration delay, {required String openAtIso}) {
     if (!kIsWeb) return;
 
@@ -112,16 +108,13 @@ class _CreateScreenState extends State<CreateScreen> {
         imageUrl: imgCtrl.text.trim(),
       );
 
-      // 1) сразу уведомление "сохранено" (НЕ ждём)
       _notifySaved();
 
-      // 2) пример отложенного (можешь убрать). Работает ТОЛЬКО пока вкладка открыта.
       // _scheduleWebReminder(const Duration(seconds: 10), openAtIso: openAtIso);
 
       if (!mounted) return;
       Navigator.pop(context, true);
     } catch (e) {
-      // покажем реальную ошибку, если что-то упадёт
       debugPrint('Ошибка сохранения: $e');
 
       if (!mounted) return;
